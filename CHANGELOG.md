@@ -1,4 +1,4 @@
-## [0.0.1] - YYYY-MM-DD
+## [0.0.1] - 2025-06-26
 
 ### Added
 - This CHANGELOG

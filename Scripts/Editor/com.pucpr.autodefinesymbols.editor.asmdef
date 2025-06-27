@@ -1,0 +1,18 @@
+{
+    "name": "com.pucpr.autodefinesymbols.editor",
+    "rootNamespace": "PUCPR.AutoDefineSymbols.Editor",
+    "references": [
+        "GUID:95654b7acdaf0ed41be74966b5aa821d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

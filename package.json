@@ -1,6 +1,6 @@
 {
-    "name": "com.pucpr.name",
-    "displayName": "NAME",
+    "name": "com.pucpr.autodefinesymbols",
+    "displayName": "Auto Define Symbols",
     "description": "",
     "version": "0.0.1",
     "unity": "2019.3",
