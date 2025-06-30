@@ -1,11 +1,14 @@
 {
-    "name": "com.pucpr.name",
-    "displayName": "NAME",
+    "name": "com.pucpr.autodefinesymbols",
+    "displayName": "Auto Define Symbols",
     "description": "",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "unity": "2019.3",
     "changelogUrl": "",
     "_upm": {
-    "changelog": "New Features:\n\n- feature description"
+    "changelog": "New Features:\n\n- Rule for Package symbols"
+  },
+  "author": {
+    "name" : "PUCPR"
   }
 }
