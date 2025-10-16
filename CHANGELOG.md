@@ -1,3 +1,9 @@
+## [1.1.0] - 2025-10-16
+
+### Modified
+- Settings asset to Assets folder 
+- CleanUp code
+
 ## [1.0.0] - 2025-06-30
 
 ### Added

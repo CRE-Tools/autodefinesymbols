@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace PUCPR.AutoDefineSymbols
 {
-    //[CreateAssetMenu(fileName = "New_" + "SymbolSettings", menuName = "SymbolSettings/Settings")]
     public class SO_SymbolConfig : ScriptableObject
     {
         public SymbolRuleController<Package_SymbolRule> packageRule;
