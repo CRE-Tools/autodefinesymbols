@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using UnityEditor;
+using UnityEngine;
 
 namespace PUCPR.AutoDefineSymbols.Editor
 {
@@ -8,7 +10,10 @@ namespace PUCPR.AutoDefineSymbols.Editor
     public class AutoSetSymbols
     {
         static List<string> currentDefineSymbols;
-        const string _settingsPath = "Packages/com.pucpr.autodefinesymbols/Settings/SymbolSettings.asset";
+        const string _settingsFolderPath = "Assets/SymbolSettings";
+        const string _settingsAssetName = "SymbolSettings.asset";
+        static string _settingsFullPath => Path.Combine(_settingsFolderPath, _settingsAssetName);
+
 
         static AutoSetSymbols()
         {
@@ -21,14 +26,40 @@ namespace PUCPR.AutoDefineSymbols.Editor
 
         static void GetAllSymbolsAndConditionals()
         {
-            SO_SymbolConfig _settings = (SO_SymbolConfig)AssetDatabase.LoadAssetAtPath(_settingsPath, typeof(SO_SymbolConfig));
+            SO_SymbolConfig _settings = LoadOrCreateSettings();
 
             var symbolsAndConditionals = _settings.GetAllSymbolsAndConditionals();
 
-            foreach(var sC in symbolsAndConditionals)
+            foreach (var sC in symbolsAndConditionals)
             {
                 DefineSymbolsByConditional(sC);
             }
+        }
+
+        private static SO_SymbolConfig LoadOrCreateSettings()
+        {
+            SO_SymbolConfig settings = AssetDatabase.LoadAssetAtPath<SO_SymbolConfig>(_settingsFullPath);
+
+            if (settings == null)
+            {
+                ValidateSettingsFolderPath();
+
+                settings = ScriptableObject.CreateInstance<SO_SymbolConfig>();
+                AssetDatabase.CreateAsset(settings, _settingsFullPath);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+            }
+
+            return settings;
+        }
+        
+        private static void ValidateSettingsFolderPath()
+        {
+            if (!AssetDatabase.IsValidFolder(_settingsFolderPath))
+                {
+                    Directory.CreateDirectory(_settingsFolderPath);
+                    AssetDatabase.Refresh();
+                }
         }
 
         private static BuildTargetGroup GetTargetAndSymbols()
