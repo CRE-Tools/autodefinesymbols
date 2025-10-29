@@ -15,43 +15,17 @@ namespace PUCPR.AutoDefineSymbols.Editor
             serializedObject.Update();
             DrawDefaultInspector();
 
-            TestFunction();
+            ForceRecompile();
 
             serializedObject.ApplyModifiedProperties();
         }
 
-        private void TestFunction()
+        private void ForceRecompile()
         {
             if (GUILayout.Button("Force Recompile"))
             {
                 UnityEditor.Compilation.CompilationPipeline.RequestScriptCompilation();
             }
         }
-
-
-
-
-        //private void Draw()
-        //{
-        //    serializedObject.Update();
-
-        //    SerializedProperty symbolsRefProperty = serializedObject.FindProperty(nameof(script.GetSymbolRefs));
-
-        //    var sArray = script.GetSymbolRefs;
-
-        //    for (int i = 0; i <= sArray.Length - 1; i++)
-        //    {
-        //        string label = sArray[i].symbolRules.ToString();
-        //        label = label.Split('.').Last();
-        //        EditorGUILayout.LabelField(label);
-
-        //        SerializedProperty refProperty = 
-        //            symbolsRefProperty.GetArrayElementAtIndex(i).
-        //            FindPropertyRelative("refs");
-
-        //        EditorGUILayout.PropertyField(refProperty, true);
-        //    }
-        //}
-
     }
 }

@@ -1,3 +1,4 @@
+v1.2.0
 <p align="center">
     <img width="100" height="100" src="/Documentation~/logos/1024x.png" align="center" />
 </p>
@@ -8,13 +9,14 @@
 
 ## About
 
-`#DESCRIPTION#`
-
-### Unity Versions
-- `UNITY VERSIONS`
+AutoDefineSymbols is a utility for Unity projects that automatically manages Define Symbols based on customizable prebuild rules. It streamlines conditional compilation by ensuring that the correct symbols are always defined according to your project's context. The tool currently supports package-based rules and is designed with an interface for easy addition of more rule types in the future.
 
 ### Features
-- `#FEATURES#`
+- Automatically defines and updates Unity Define Symbols before build time.
+- Package Rule: Adds or removes symbols based on the presence of specific Unity packages.
+- Extensible Rule System: Built with an interface to support additional rule types in future releases.
+- Integrates seamlessly into Unity project workflows.
+- Configuration via a simple prebuild rule context file.
 
 ## How to Install
 
